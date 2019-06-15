@@ -13,7 +13,11 @@ namespace Zer0.NumbersToWords.Core.UnitTest
         [InlineData(-15, "minus fifteen")]
         [InlineData(-46, "minus forty-six")]
         [InlineData(123, "one hundred and twenty-three")]
-        public void TestToWords(int value, string result)
+        [InlineData(4978, "four thousand nine hundred and seventy-eight")]
+        [InlineData(16978, "sixteen thousand nine hundred and seventy-eight")]
+        [InlineData(302978, "three hundred and two thousand nine hundred and seventy-eight")]
+        [InlineData(2000000, "two million")]
+        public void TestToWords(int value, string result) 
         {
             Assert.Equal(value.ToWords(), result);
         }
